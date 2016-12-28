@@ -50,13 +50,12 @@ define([
       $root.find(".sample-request-param:checked").each(function(i, element) {
           var group = $(element).data("sample-request-param-group-id");
           $root.find("[data-sample-request-param-group=\"" + group + "\"]").each(function(i, element) {
-            var key = $(element).data("sample-request-param-name");
-            var value = element.value;
-            if ( ! element.optional && element.defaultValue !== '') {
-                value = element.defaultValue;
+            var key = requestFieldName($(element).data("sample-request-param-name"));
+            var value = $(element).val();
+            if (value !== '') {
+              param[key] = value;
+              paramType[key] = $(element).next().text();
             }
-            param[key] = value;
-            paramType[key] = $(element).next().text();
           });
       });
 
@@ -169,6 +168,20 @@ define([
       var div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
+  }
+
+  function requestFieldName(paramName) {
+      var items = paramName.split(".");
+      var fieldName = "";
+      for (var i = 0; i < items.length; i++) {
+          var item = items[i];
+          if (i === 0) {
+              fieldName = item;
+          } else {
+              fieldName += "[" + item + "]"
+          }
+      } // for
+      return fieldName;
   }
 
   /**
