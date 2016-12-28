@@ -36,12 +36,12 @@ section h1 {
 }
 
 article h1 {
-  font-family: 'Open Sans', sans-serif;  
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 22px;!important
   line-height: 26px;
   color: black;
- 
+
 }
 
 
@@ -69,7 +69,7 @@ th {
 
 p {
   color: #808080;
-  margin: 10px 0;  
+  margin: 10px 0;
 }
 
 /* ------------------------------------------------------------------------------------------
@@ -110,29 +110,29 @@ pre code {
 }
 
 pre.language-html:before {
-top:-40px;    
+top:-40px;
 }
 
 pre.language-html[data-type="get"]:before {
   background-color: #00CE60;
-  padding: 5px 10px; 
-  border-radius: 4px;  
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
 pre.language-html[data-type="put"]:before {
   background-color: orange;
-  padding: 5px 10px; 
-  border-radius: 4px;  
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 pre.language-html[data-type="post"]:before {
   background-color: #0AB1F6;
-  padding: 5px 10px; 
-  border-radius: 4px;  
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 pre.language-html[data-type="delete"]:before {
   background-color: #FF6060;
-  padding: 5px 10px; 
-  border-radius: 4px;  
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
 /*prettify CSS*/
@@ -205,7 +205,7 @@ border-left: orange 4px solid;
 }
 
 .nav-list>.active>a, .nav-list>.active>a:hover, .nav-list>.active>a:focus {
-    background-color: #06D2B3; 
+    background-color: #06D2B3;
     border-radius: 5px;
     color:white
 }
@@ -237,7 +237,7 @@ ul.nav-tabs {
 .nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
     border: solid 1px #E7E7E7;
     border-radius: 20px;
-    
+
 }
 /* ------------------------------------------------------------------------------------------
  * Print
@@ -245,7 +245,7 @@ ul.nav-tabs {
   #content {
     margin-left: 350px;
     padding-right: 30px;
-      
+
   }
 
 /*Version button styles*/
@@ -263,3 +263,11 @@ ul.nav-tabs {
     background-color: aqua; !important
 }
 /* /@media print */
+
+/* ------------------------------------------------------------------------------------------
+ * Quickstart custom style
+ * ------------------------------------------------------------------------------------------ */
+article[data-group="Quickstart"] .default-value {
+  display: none;
+}
+
