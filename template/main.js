@@ -389,8 +389,7 @@ require([
         // sample request switch
         $('.sample-request-switch').click(function (e) {
             var name = '.' + $(this).attr('name') + '-fields';
-            $(name).addClass('hide');
-            $(this).parent().next(name).removeClass('hide');
+            $(this).prop('checked') ? $(name).removeClass('hide') : $(name).addClass('hide');
         });
 
         // call scrollspy refresh method
