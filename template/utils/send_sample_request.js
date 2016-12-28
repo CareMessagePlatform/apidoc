@@ -112,6 +112,10 @@ define([
           }
           $root.find(".sample-request-response-json").html(jsonResponse);
           refreshScrollSpy();
+          // Update all email and token fields
+          if (isGetTokenRequest()) {
+            setEmailAndTokenFields(data);
+          }
       };
 
       function displayError(jqXHR, textStatus, error) {
@@ -135,6 +139,15 @@ define([
           $root.find(".sample-request-response-json").html(message);
           refreshScrollSpy();
       };
+
+      function isGetTokenRequest() {
+        return JSON.stringify(Object.keys(param)) === "[\"email\",\"password\"]"
+      }
+
+      function setEmailAndTokenFields(data) {
+        $("input[data-sample-request-param-name='email']").val(param["email"]);
+        $("input[data-sample-request-param-name='token']").val(data["token"]);
+      }
   }
 
   function clearSampleRequest(group, name, version)
