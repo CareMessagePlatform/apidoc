@@ -119,7 +119,9 @@ define([
       };
 
       function displayError(jqXHR, textStatus, error) {
-          var message = "Error " + jqXHR.status + ": " + error;
+          var statusCode = jqXHR.status;
+          var errorMsg = statusCode === 0 ? "We're sorry, we're having some trouble completing your request at the moment, try again later or contact your account manager." : error;
+          var message = "Error " + statusCode + ": " + errorMsg;
           var jsonResponse;
           try {
               jsonResponse = JSON.parse(jqXHR.responseText);
